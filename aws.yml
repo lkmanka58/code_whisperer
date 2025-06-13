@@ -1,0 +1,27 @@
+name: AWS Code Whisperer Test
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: arn:aws:iam::975050122078:role/code_whisperer
+        aws-region: us-east-1
+
+    - name: Test deploy (örnek komut)
+      run: echo "Başarılı! Code Whisperer role çalıştı!"
