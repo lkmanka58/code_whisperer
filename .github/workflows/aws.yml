@@ -3,7 +3,7 @@ name: AWS Code Whisperer Test
 on:
   push:
     branches:
-      - ana
+      - main
   workflow_dispatch:
 
 permissions:
@@ -23,5 +23,5 @@ jobs:
           role-to-assume: arn:aws:iam::975050122078:role/code_whisperer
           aws-region: us-east-1
 
-      - name: Test deploy (örnek komut)
-        run: echo "Başarılı! AWS rolü çalıştı!"
+      - name: Test deploy (example)
+        run: echo "✅ Successful AWS role execution!"
